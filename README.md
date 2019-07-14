@@ -1,3 +1,3 @@
-# Date Clock
+# Javascript Code for practice
 
-Clock made with JavaScript, for practice 
+JavaScript Practice 
