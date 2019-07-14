@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Clock Javascript</title>
+  </head>
+  <body onload="clock();">
+    <div class="currentDate">
+      <!-- day of the week (Monday to Friday) -->
+      <div class="day">
+        Today is :
+        <p id="day"></p>
+      </div>
+      <!-- Current time hr/min/sec -->
+      <div class="currentTime">
+        The current time is:
+        <p id="time"></p>
+      </div>
+    </div>
+    <!-- currentDate div -->
+    <script>
+      //function to make the clock live!
+      function clockrefresh() {
+        let refresh = 1000; // Refresh rate in milli seconds
+        mytime = setTimeout("clock()", refresh);
+      }
+
+      function clock() {
+        let newDay = new Date();
+        //Current Day
+        let days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ];
+        let weekday = days[newDay.getDay()];
+        //Current Time
+        let hours = newDay.getHours();
+        //math to turn 24 hours into 12
+        hours = ((hours + 11) % 12) + 1;
+        let minutes = newDay.getMinutes();
+        //turning minutes into 2 digits when numbers are under 10
+        if (minutes < 10) {
+          minutes = "0" + minutes;
+        }
+        let seconds = newDay.getSeconds();
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        let amPm = "AM";
+        //creating AM/PM format for the clock
+        if (hours === 12) {
+          amPm = "PM";
+        }
+        //Displaying into HTML
+        document.getElementById("day").innerHTML = weekday;
+        document.getElementById("time").innerHTML =
+          hours + ":" + minutes + ":" + seconds + amPm;
+
+        clockrefresh();
+      }
+    </script>
+  </body>
+</html>
