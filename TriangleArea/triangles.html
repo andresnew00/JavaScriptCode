@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      Calculate Area:
+      <div id="alert"></div>
+      <form id="triangleform">
+        Side 1:
+        <input type="number" id="firstSide" value="" />
+        <br />
+        Side 2:
+        <input type="number" id="secondSide" value="" />
+        <br />
+        Side 3:
+        <input type="number" id="thirdSide" value="" />
+        <br />
+      </form>
+      <!-- End of form -->
+      <button id="submitBtn">Submit</button>
+    </div>
+    <div id="result"></div>
+    <!-- End of container -->
+    <script>
+      document
+        .getElementById("submitBtn")
+        .addEventListener("click", function() {
+          //delete alert if it exits
+          document.getElementById("alert").innerHTML = "";
+          // Sides
+          let a = parseInt(document.getElementById("firstSide").value);
+          let b = parseInt(document.getElementById("secondSide").value);
+          let c = parseInt(document.getElementById("thirdSide").value);
+          // Deleting not wanted values
+          if (a < 1 || b < 1 || c < 1) {
+            document.getElementById("alert").innerHTML =
+              "The area of a triangle can not be 0 or less than 0 please enter a valid value.";
+            //Stops function
+            return;
+          }
+          // Sum
+          let sum = a + b + c;
+          // Half of triangle's perimeter
+          let halfPerimeter = sum / 2;
+          // Area
+          let area =
+            halfPerimeter *
+            (halfPerimeter - a) *
+            (halfPerimeter - b) *
+            (halfPerimeter - c);
+          let areasqr = Math.sqrt(area);
+          //Total
+          let total = areasqr.toFixed(2);
+          console.log(total);
+          // Display on HTML
+          document.getElementById("result").innerHTML = total;
+        });
+    </script>
+  </body>
+</html>
