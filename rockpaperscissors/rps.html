@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro">Click on your choice to play RPS!</div>
+      <button id="rock" onclick="rockPlay()">Rock</button>
+      <button id="paper" onclick="paperPlay()">Paper</button>
+      <button id="scissors" onclick="scissorsPlay()">Scrissors</button>
+      <div id="alert"></div>
+      <div id="wins"></div>
+      <div id="losses"></div>
+      <div id="yourchoice"></div>
+      <div id="computerchoice"></div>
+    </div>
+
+    <script>
+      //score count
+      let wins = 0;
+      let losses = 0;
+      console.log(wins);
+      console.log(losses);
+      //functions for each button
+      function rockPlay() {
+        // numeric value to rps to make it easier to match with compputer choice
+        const r = 0;
+        //computer gets a random number from 0 to 2 and this gets interpreted as a choice between r,p,s.
+        let computerInput = Math.floor(Math.random() * 3);
+        if (r === computerInput) {
+          document.getElementById("alert").innerHTML = "It's a Tie";
+          document.getElementById("yourchoice").innerHTML = "You Picked: Rock";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Rock";
+        } else if (computerInput === 1) {
+          document.getElementById("alert").innerHTML = "You Lost... Try again!";
+          losses++;
+          document.getElementById("yourchoice").innerHTML = "You Picked: Rock";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Paper";
+        } else {
+          document.getElementById("alert").innerHTML =
+            "Winner Winner Chicken Dinner!";
+          wins++;
+          document.getElementById("yourchoice").innerHTML = "You Picked: Rock";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Scissors";
+        }
+        document.getElementById("wins").innerHTML = "Wins: " + wins;
+        document.getElementById("losses").innerHTML = "losses: " + losses;
+      }
+      function paperPlay() {
+        const p = 1;
+        let computerInput = Math.floor(Math.random() * 3);
+        if (p === computerInput) {
+          document.getElementById("alert").innerHTML = "It's a Tie";
+          document.getElementById("yourchoice").innerHTML = "You Picked: Paper";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Paper";
+        } else if (computerInput === 0) {
+          document.getElementById("alert").innerHTML =
+            "Winner Winner Chicken Dinner!";
+          wins++;
+          document.getElementById("yourchoice").innerHTML = "You Picked: Paper";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Rock";
+        } else {
+          document.getElementById("alert").innerHTML = "You Lost... Try again!";
+          losses++;
+          document.getElementById("yourchoice").innerHTML = "You Picked: Paper";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Scissors";
+        }
+        document.getElementById("wins").innerHTML = "Wins: " + wins;
+        document.getElementById("losses").innerHTML = "losses: " + losses;
+      }
+      function scissorsPlay() {
+        const s = 2;
+        let computerInput = Math.floor(Math.random() * 3);
+        if (s === computerInput) {
+          document.getElementById("alert").innerHTML = "It's a Tie";
+          document.getElementById("yourchoice").innerHTML =
+            "You Picked: Scissors";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Scissors";
+        } else if (computerInput === 1) {
+          document.getElementById("alert").innerHTML =
+            "Winner Winner Chicken Dinner!";
+          wins++;
+          document.getElementById("yourchoice").innerHTML =
+            "You Picked: Scissors";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Paper";
+        } else {
+          document.getElementById("alert").innerHTML = "You Lost... Try again!";
+          losses++;
+          document.getElementById("yourchoice").innerHTML =
+            "You Picked: Scissors";
+          document.getElementById("computerchoice").innerHTML =
+            "Computer Picked: Rock";
+        }
+        document.getElementById("wins").innerHTML = "Wins: " + wins;
+        document.getElementById("losses").innerHTML = "losses: " + losses;
+      }
+    </script>
+  </body>
+</html>
