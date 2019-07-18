@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <div id="game">
+        Press any letter to start playing
+        <div id="score"></div>
+        <div id="currentWord"></div>
+        <div id="lettersGuessed"></div>
+      </div>
+    </div>
+    <script>
+      //words array
+      const computerBrands = ["Apple", "Dell", "Asus", "Lenovo", "Alienware"];
+      //sort the words and select a random one from array
+      const randomBrand = computerBrands[Math.floor(Math.random() * computerBrands.length)];
+      //display the word as _ _ _ _ _ and reveal as the user adds a correct answer
+      //Display scores
+      //Display letters guessed
+      //automatic next word when done
+    </script>
+  </body>
 </html>
