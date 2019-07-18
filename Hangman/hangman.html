@@ -25,21 +25,47 @@
       const wordArray = randomBrand.split("");
       //display the word as _ _ _ _ _
       const progressWord = [];
-      for (var i = 0; i < wordArray.length; i++) progressWord.push("_");
+      for (let i = 0; i < wordArray.length; i++) progressWord.push("_");
       //listen to user input
-      let userInput = (window.onkeyup = function(event) {
-        console.log(String.fromCharCode(event.keyCode || event.which));
-      });
+      // let userInput = (window.onkeyup = function(event) {
+      //   console.log(String.fromCharCode(event.keyCode || event.which));
+      // });
       //reveal as the user adds a correct answer
-      //!! YOU GOT THIS CODE ONLINE READ ONLINE AND MODIFY THE CODE TO GET THE LETTER AND COMPARE IT
-      var validChoices = ["r", "p", "s"];
-
+      var validChoices = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
+      ];
+        //? work on this and make it work
       document.onkeyup = function(event) {
-        var choiceIsValid = false;
+        let choiceIsValid = false;
 
-        var userChoice = event.key;
+        let userChoice = event.key;
 
-        for (var i = 0; i < validChoices.length; i++) {
+        for (let i = 0; i < validChoices.length; i++) {
           if (validChoices[i] === userChoice) {
             choiceIsValid = true;
           }
