@@ -19,10 +19,21 @@
       //words array
       const computerBrands = ["Apple", "Dell", "Asus", "Lenovo", "Alienware"];
       //sort the words and select a random one from array
-      const randomBrand = computerBrands[Math.floor(Math.random() * computerBrands.length)];
-      //display the word as _ _ _ _ _ and reveal as the user adds a correct answer
-      //Display scores
+      const randomBrand =
+        computerBrands[Math.floor(Math.random() * computerBrands.length)];
+      //split the word into an array of characters
+      const wordArray = randomBrand.split("");
+      //display the word as _ _ _ _ _
+      const progressWord = [];
+      for (var i = 0; i < wordArray.length; i++) progressWord.push("-");
+      //listen to user input
+      let userInput = window.onkeyup = function(event){
+        console.log(String.fromCharCode(event.keyCode || event.which));
+      };
+      //reveal as the user adds a correct answer
+      //remaining tries
       //Display letters guessed
+      //Display scores wins and losses
       //automatic next word when done
     </script>
   </body>
