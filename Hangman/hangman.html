@@ -26,56 +26,57 @@
       //display the word as _ _ _ _ _
       const progressWord = [];
       for (let i = 0; i < wordArray.length; i++) progressWord.push("_");
-      //listen to user input
-      // let userInput = (window.onkeyup = function(event) {
-      //   console.log(String.fromCharCode(event.keyCode || event.which));
-      // });
-      //reveal as the user adds a correct answer
-      var validChoices = [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z"
-      ];
-        //? work on this and make it work
+
+      //listening to user input
       document.onkeyup = function(event) {
+        //listen to user input
+        var validChoices = [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z"
+        ];
         let choiceIsValid = false;
 
-        let userChoice = event.key;
+        let userInput = event.key;
+        let userChoice = userInput.toLowerCase();
 
-        for (let i = 0; i < validChoices.length; i++) {
-          if (validChoices[i] === userChoice) {
+        //validate letter input
+        for (var j = 0; j < validChoices.length; j++) {
+          if (validChoices[j] === userChoice) {
             choiceIsValid = true;
           }
         }
-
-        if (choiceIsValid) {
-          alert("Your choice is " + userChoice);
-        } else {
-          alert("Please make a valid choice");
+        //reveal as the user adds a correct answer
+        for (var k = 0; k < randomBrand.length; k++) {
+          if (randomBrand[k] === userChoice) {
+            progressWord[k] = userChoice;
+          }
         }
+        //show current word progress THIS MUST BE AT THE END
+        document.getElementById("currentWord").innerHTML = progressWord.join(" ");
       };
       //remaining tries
       //Display letters guessed
