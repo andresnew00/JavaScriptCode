@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var zoo = ["chickens", "pigs", "cows", "ostriches"];
+
+        zoo.forEach(animal => console.log("I love " + animal));
+
+        zoo.forEach(animal => animal.charAt(0) === "c" || animal.charAt(0) === "o" ? alert(animal + " starts with c or o!") 
+        : console.log(""));
+
+    </script>
+</body>
+</html>
