@@ -11,6 +11,12 @@
       <div id="game">
         Press any letter to start playing
         <div id="score">Current Score:</div>
+        <div class="wins">wins:</div>
+        <div class="currentWins">0</div>
+        <div class="losses">losses:</div>
+        <div class="currentLosses">0</div>
+        <div class="tries">You have this remaining tries:</div>
+        <div class="currentTries">6</div>
         <div id="currentWord">Current word</div>
         <div id="lettersGuessed"></div>
       </div>
@@ -26,6 +32,12 @@
       //display the word as _ _ _ _ _
       const progressWord = [];
       for (let i = 0; i < wordArray.length; i++) progressWord.push("_");
+      // declaring score variables
+      let tries = 6;
+      let wins = 0;
+      let losses = 0;
+
+      
 
 
       //listening to user input
