@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var num1 = 1;
+    var num2 = 3;
+    var num3 = 5;
+    var aString1 = "mystring"
+    var aString2 = "mystring"
+    var aString3 = "mystring"
+
+    console.log(adder(num1,num2,num3));
+    console.log(substract(num1,num2,num3));
+    //should return false
+    console.log(isString(num1, num2, aString1));
+    //should return true
+    console.log(isString(aString1,aString2,aString3));
+    //adder function
+    function adder( n1, n2 , n3){
+        return n1 + n2 + n3;
+    }
+
+    //substract function
+    function substract(n1,n2,n3){
+        return n1 - n2 - n3;
+    }
+
+    function isString(item1, item2, item3){
+        return typeof item1 === 'string' && typeof item2 === 'string' && typeof item3 === 'string' ? true : false;
+    }
+
+
+    </script>
+</body>
+</html>

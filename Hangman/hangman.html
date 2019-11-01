@@ -15,10 +15,12 @@
         <div class="currentWins">0</div>
         <div class="losses">losses:</div>
         <div class="currentLosses">0</div>
+        <div id="lettersGuessed">letters guessed:</div>
+        <div id="lettersGuessedByUser"></div>
         <div class="tries">You have this remaining tries:</div>
-        <div class="currentTries">6</div>
+        <div id="currentTries">6</div>
         <div id="currentWord">Current word</div>
-        <div id="lettersGuessed"></div>
+        
       </div>
     </div>
     <script>
@@ -36,10 +38,9 @@
       let tries = 6;
       let wins = 0;
       let losses = 0;
+      const guessedLetters = [];
 
-      
-
-
+    
       //listening to user input
       document.onkeyup = function(event) {
         //listen to user input
@@ -80,21 +81,46 @@
         for (var j = 0; j < validChoices.length; j++) {
           if (validChoices[j] === userChoice) {
             choiceIsValid = true;
+            break;
           }
         }
+        //alert the user that the value they inserted is not a letter
+        if (choiceIsValid === false){
+           alert("your choice is not valid")
+        };
+
         //reveal as the user adds a correct answer
         for (var k = 0; k < randomBrand.length; k++) {
+
           if (randomBrand[k] === userChoice) {
             progressWord[k] = userChoice;
+            // guessedLetters.push(userChoice);
+
+
+            //!! TODO this is not working trying to display all the current contents of the array 
+            // to display all the letters that were already picked
+
+            // guessedLetters.forEach(letter => document.getElementById("lettersGuessedByUser").innerHTML = letter);
+          } else {
+            //this displays the tries and checks to see if the game is over then it refreshes
+            document.getElementById("currentTries").innerHTML = tries--;
+            if(tries === -1){
+              alert("you lose");
+              window.location.reload();
+            }
+            break;
           }
         }
         //show current word progress THIS MUST BE AT THE END
         document.getElementById("currentWord").innerHTML = progressWord.join(
           " "
         );
+        if (wordArray === progressWord){
+        alert("you win!")
+        window.location.reload();
+      }
       };
       //remaining tries
-      console.log("hello world");
       //Display letters guessed
       //Display scores wins and losses
       //automatic next word when done
