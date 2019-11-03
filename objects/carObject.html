@@ -42,44 +42,43 @@
         }
       };
 
-      //log
-
-    //   // the car make
-    //   console.log(car.make);
-    //   // the car model
-    //   console.log(car.model);
-    //   // the car mileage
-    //   console.log(car.mileage);
-    //   // how to run drive to work
-    //   car.driveToWork();
-    //   // how to run driveAroundWorld
-    //   car.driveAroundWorld();
-    //   // how to gettuned
-    //   car.getTunedUp();
-
-    // Car game!
-
-    document.onkeyup = function(event) {
-        var userInput = event.key;
-    // h to honk
-    if (userInput === "h"){
-        car.honk();
-    };
-
-    if (userInput === "d"){
-        car.driveToWork();
-    }
-
-    if (userInput === "w"){
-        car.driveAroundWorld();
-    }
-
-    if (userInput === "t"){
-        car.getTunedUp();
-    }
-}
-
-
+      // Car game!
+      
+      document.onkeyup = function(event) {
+          var userInput = event.key;
+          // h to honk
+          if (userInput === "h"){
+              car.honk();
+            };
+            
+            if (userInput === "d"){
+                car.driveToWork();
+            }
+            
+            if (userInput === "w"){
+                car.driveAroundWorld();
+            }
+            
+            if (userInput === "t"){
+                car.getTunedUp();
+            }
+        }
+        
+        //log
+  
+      //   // the car make
+      //   console.log(car.make);
+      //   // the car model
+      //   console.log(car.model);
+      //   // the car mileage
+      //   console.log(car.mileage);
+      //   // how to run drive to work
+      //   car.driveToWork();
+      //   // how to run driveAroundWorld
+      //   car.driveAroundWorld();
+      //   // how to gettuned
+      //   car.getTunedUp();
+        
     </script>
   </body>
 </html>
