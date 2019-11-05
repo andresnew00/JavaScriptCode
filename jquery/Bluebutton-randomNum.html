@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <button id="click-btn">A BUTTON</button>
+
+    <div id="randomNumber">0</div>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+    <script>
+        // document ready to wait for html to load before performing any actions
+        $(document).ready(function() {
+            // we add the on click function to our button
+            $("#click-btn").on("click", function() {
+                // this generates a random number which is fixed to 0 decimals
+                $("#randomNumber").html((Math.random() * (1000 - 1) + 1).toFixed(0));
+            })
+        });
+    </script>
+
+</body>
+
+</html>
